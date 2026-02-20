@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>is this u?</title>
+<link rel="stylesheet" href="monkey.css">
+</head>
+<body>
+
+<!-- ── Calibration / Loading screen ── -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="spinner"></div>
+  <h2>SETTING UP...</h2>
+  <p id="calMsg">Loading AI models, hang tight...</p>
+
+  <div class="cal-steps">
+    <div class="cal-step active" id="cal-model">
+      <span class="cal-step-icon">&#x1F9E0;</span>
+      <span>Loading AI models</span>
+      <span class="cal-check">&#x2705;</span>
+    </div>
+    <div class="cal-step" id="cal-face">
+      <span class="cal-step-icon">&#x1F9D1;</span>
+      <span>Detecting your face &mdash; look at the camera!</span>
+      <span class="cal-check">&#x2705;</span>
+    </div>
+    <div class="cal-step" id="cal-hands">
+      <span class="cal-step-icon">&#x1F44B;</span>
+      <span>Detecting your hands &mdash; raise both hands!</span>
+      <span class="cal-check">&#x2705;</span>
+    </div>
+  </div>
+
+  <div class="loader-bar">
+    <div class="loader-fill" id="loaderFill"></div>
+  </div>
+</div>
+
+<!-- ── Main UI ── -->
+<header>
+  <h1>is this u?</h1>
+  <p class="subtitle">strike a pose &mdash; your inner monkey awaits &#x1F412;</p>
+</header>
+
+<div class="pose-hints">
+  <div class="hint" id="hint-thinking">
+    <span>&#x1F914;</span>Finger on lip/chin
+  </div>
+  <div class="hint" id="hint-wink">
+    <span>&#x1F609;</span>Finger on lip &amp; wink
+  </div>
+  <div class="hint" id="hint-idea">
+    <span>&#x1F4A1;</span>Pointer up &amp; open smile
+  </div>
+  <div class="hint" id="hint-surprised">
+    <span>&#x1F631;</span>Hands at chest &amp; mouth open
+  </div>
+  <div class="hint" id="hint-hearttouch">
+    <span>&#x1F970;</span>Hands at chest &amp; smile
+  </div>
+</div>
+
+<div class="camera-wrap">
+  <video id="video" autoplay playsinline muted></video>
+  <canvas id="overlay"></canvas>
+</div>
+
+<div class="status-bar" id="statusBar">Starting up...</div>
+<canvas id="snap" style="display:none"></canvas>
+
+<!-- ── Photo popup ── -->
+<div id="popup">
+  <div class="popup-inner">
+    <div class="popup-title" id="popupTitle"></div>
+
+    <div class="comparison">
+      <div class="comparison-item">
+        <canvas id="userPhoto"></canvas>
+      </div>
+
+      <div class="arrow-col">
+        <div class="arrow-text">is this u?</div>
+        <svg class="arrow-svg" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 16 H54" stroke="#FFE135" stroke-width="4" stroke-linecap="round"/>
+          <path d="M44 4 L62 16 L44 28" stroke="#FFE135" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="comparison-item">
+        <img id="monkeyPhoto" src="" alt="monkey meme">
+      </div>
+    </div>
+
+    <p class="popup-caption" id="popupCaption"></p>
+
+    <div class="popup-btns">
+      <button class="btn btn-close" onclick="closePopup()">&#x274C; close</button>
+      <button class="btn btn-save"  onclick="saveImage()">&#x1F4BE; save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <a href="https://yanisa.netlify.app/" target="_blank" rel="noreferrer">yanisa srisa-ard</a>
+</footer>
+
+<!-- ── Scripts ── -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+<script src="monkey.js"></script>
+</body>
+</html>
