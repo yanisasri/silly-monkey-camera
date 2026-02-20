@@ -40,7 +40,7 @@ No build step or server required — open `monkey.html` directly in a browser (c
 
 ```
 /
-├── monkey.html          # Markup: calibration screen, hint pills, video, popup
+├── index.html          # Markup: calibration screen, hint pills, video, popup
 ├── monkey.css           # All styles: layout, animations, popup, responsive
 ├── monkey.js            # All logic: detection, calibration, snapshot, save
 └── monkey-images/
