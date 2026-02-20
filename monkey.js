@@ -19,7 +19,7 @@ const POSES = {
   wink: {
     img:     "monkey-images/wink.jpg",
     title:   "is this u?",
-    caption: "ok chill out now",
+    caption: "ok mamacita~",
     hint:    "Finger on lip/chin &amp; wink",
     emoji:   "&#x1F609;",
     hintId:  "hint-wink"
