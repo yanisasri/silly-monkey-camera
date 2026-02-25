@@ -34,7 +34,7 @@ A real-time pose detection web app that matches your facial expressions and hand
 
 This app is deployed on Netlify. See it [here](https://yanisa-monkeymeme.netlify.app).
 
-No build step or server required — open `monkey.html` directly in a browser (camera permission required).
+No build step or server required — open `index.html` directly in a browser (camera permission required).
 
 ## 📁 File Structure
 
